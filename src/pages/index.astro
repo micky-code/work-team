@@ -1,15 +1,11 @@
 ---
-import MyComponent from '../components/MyComponent.vue';
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+import Layout from '../components/Layout.vue';
 
-</head>
-<body>
-	<MyComponent/>
-</body>
-</html>
+// import '../styles/tailwind.css';
+
+---
+
+<Layout>
+  <h1 class="text-4xl font-bold mb-4">Welcome to the Home Page</h1>
+  <p class="text-lg">This is the home page content.</p>
+</Layout>
