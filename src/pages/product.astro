@@ -1,0 +1,46 @@
+---
+import Layout from "../components/Layout.vue";
+
+ 
+---
+<!doctype html>
+<html lang="en">
+  <body>
+    <Layout client:only>
+      <div id="app" class="max-w-4xl mx-auto p-6">
+        <h1 class="text-4xl font-bold mb-4 text-center">Product and Services</h1>
+        <p class="text-lg text-center mb-8">Discover our latest articles and insights below.</p>
+        
+        <!-- Blog Section -->
+        <section class="mt-8">
+          <h2 class="text-3xl font-semibold mb-4 text-center">Latest Blogs</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <article class="bg-white p-4 border border-gray-300 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <h3 class="text-xl font-bold mb-2" id="blog1">Education</h3>
+              <p class="text-gray-700 mb-4">This is a summary of the first blog post. It provides an overview of the content and entices readers to click for more.</p>
+              <a href="/blog" class="text-blue-500 hover:underline">Read more</a>
+            </article>
+
+            <article class="bg-white p-4 border border-gray-300 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+              <p class="text-gray-700 mb-4">This is a summary of the second blog post. It provides an overview of the content and entices readers to click for more.</p>
+              <a href="/blog/post-2" class="text-blue-500 hover:underline">Read more</a>
+            </article>
+
+            <article class="bg-white p-4 border border-gray-300 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <h3 class="text-xl font-bold mb-2">Custom Solution</h3>
+              <p class="text-gray-700 mb-4">This is a summary of the third blog post. It provides an overview of the content and entices readers to click for more.</p>
+              <a href="/blog/post-3" class="text-blue-500 hover:underline">Read more</a>
+            </article>
+            
+            <article class="bg-white p-4 border border-gray-300 rounded-lg shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+              <h3 class="text-xl font-bold mb-2">Custom Solution</h3>
+              <p class="text-gray-700 mb-4">This is a summary of the third blog post. It provides an overview of the content and entices readers to click for more.</p>
+              <a href="/blog/post-3" class="text-blue-500 hover:underline">Read more</a>
+            </article>
+          </div>
+        </section>
+      </div>
+    </Layout>
+  </body>
+</html>
