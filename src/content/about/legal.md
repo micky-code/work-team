@@ -1,0 +1,4 @@
+---
+privacy: tttttttttt
+terms: bbbbbb
+---

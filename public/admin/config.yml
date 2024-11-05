@@ -1,78 +1,70 @@
-local_backend: true
-
 backend:
   name: github
-  repo: doeunda / decap
-  preview_context: 
-  use_graphql: true
+  repo: doeunda / team
+  branch: main # Set to the main branch on GitHub
 
-media_folder: "src/assets/images" # Location where files will be stored in the repo
-public_folder: "/assets/images"   # The src attribute for uploaded media
+media_folder: "public/uploads" # Folder where images are stored
+public_folder: "/uploads"
+
+site_url: "https://your-netlify-site-url.netlify.app" # Replace with your Netlify URL
+
+i18n:
+  structure: single_file
+  locales: ["en", "kh"]
+  default_locale: "en"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts"
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/pages/index.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", i18n: true }
+          - { label: "Content", name: "content", widget: "markdown", i18n: true }
+
+      - label: "Products & Services"
+        name: "products_services"
+        file: "src/pages/products-services.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", i18n: true }
+          - { label: "Content", name: "content", widget: "markdown", i18n: true }
+
+      - label: "About Us"
+        name: "about_us"
+        file: "src/pages/about-us.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", i18n: true }
+          - { label: "Company Profile", name: "company_profile", widget: "markdown", i18n: true }
+          - { label: "Our Customers", name: "our_customers", widget: "markdown", i18n: true }
+          - { label: "Privacy Policy", name: "privacy_policy", widget: "markdown", i18n: true }
+          - { label: "Terms and Conditions", name: "terms_conditions", widget: "markdown", i18n: true }
+
+      - label: "Contact Us"
+        name: "contact"
+        file: "src/pages/contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string", i18n: true }
+          - { label: "Contact Info", name: "contact_info", widget: "markdown", i18n: true }
+
+  - name: "blog"
+    label: "Blog"
+    folder: "src/posts"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Publish Date", name: "publishedAt", widget: "datetime", required: true }
-      - { label: "Is Publish", name: "isPublish", widget: "boolean" }
-      - { label: "Is Draft", name: "isDraft", widget: "boolean" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Content", name: "body", widget: "markdown", i18n: true }
 
-  - name: "restaurants"
-    label: "Restaurants"
-    folder: "content/restaurants"
+  - name: "customers"
+    label: "Customers"
+    folder: "src/customers"
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-
-  - name: "faq"
-    label: "FAQ"
-    folder: "content/faq"
-    create: true
-    fields:
-      - { label: "Question", name: "question", widget: "string" }
-      - { label: "Answer", name: "answer", widget: "markdown" }
-
-  - name: "settings"
-    label: "Settings"
-    files:
-      - label: "Global Settings"
-        name: "global"
-        file: "content/settings/global.yml"
-        fields:
-          - { label: "Site Title", name: "siteTitle", widget: "string" }
-          - { label: "Site Description", name: "siteDescription", widget: "text" }
-
-  - name: "pages"
-    label: "Pages"
-    folder: "content/pages"
-    create: true
-    nested:
-      depth: 2
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "directory"
-    label: "Directory"
-    folder: "content/directory"
-    create: true
-    nested:
-      depth: 2
-    fields:
-      - { label: "Directory Name", name: "name", widget: "string" }
-
-  - name: "subdirectory"
-    label: "Sub Directory"
-    folder: "content/directory/subdirectory"
-    create: true
-    fields:
-      - { label: "Sub Directory Name", name: "name", widget: "string" }
-      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Description", name: "description", widget: "markdown", i18n: true }
+      - { label: "Website", name: "website", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
